@@ -1,0 +1,328 @@
+* {
+    font-family: Impact;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-shadow: 1px 1px gray;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: block;
+    background-image: url(../img/1607416.png);
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: auto;
+    width: 860px;
+}
+
+main{
+    overflow: auto;
+    padding-bottom: 100px;
+    min-height: calc(100vh - 75px - 55px);
+}
+/*CSS OF CARDS*/
+.memory-game {
+    min-height: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    margin-bottom: -50px;
+    perspective: 1000px;
+}
+
+.memory-card {
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform .5s;
+}
+
+.memory-card:hover {
+    transform: scale(0.96);
+    transition: transform .2s;
+ }
+ 
+ .memory-card:active {
+    transform: scale(0.92);
+    transition: transform .2s;
+ }
+ 
+ .memory-card.flip {
+    transform: rotateY(180deg);
+ }
+
+.back-face, .front-face {
+    width: 100%;
+    height: 100%;
+    padding: 15%;
+    position: absolute;
+    border-radius: 5px;
+    background: white;
+    backface-visibility: hidden;
+    box-shadow: 2px 2px 2px gray;
+}
+
+ .front-face{
+	transform: rotateY(180deg);
+}
+
+/*CSS OF HEADER*/
+.header {
+    height: 50px;
+    display: block;
+    background: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1%;
+}
+
+.header-title {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    height: 75px;
+}
+
+.header-title-text {
+    text-align: center;
+    margin: auto;
+    text-shadow: 1px 1px white;
+}
+
+/*CSS OF MENU*/
+.menu {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 860px;
+    height: 100%;
+    margin: auto;
+    background-color: gray;
+}
+
+.menu-link {
+    font-family: Arial;
+    font-weight: bold;
+    width: 33.1%;
+    position: relative;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    background-color: white;
+    height: 100%;
+    padding-top: 15px;
+    text-shadow: 0px 0px white;
+}
+
+.menu-link:hover {
+    background-color: orange;
+}
+
+/*CSS OF STOPWATCH*/
+#stopwatch
+{
+    position:relative;
+    margin-bottom: 20px;
+    font-size: 50px;
+    color:white;
+    text-shadow: 0px 0px white;
+}
+
+#stopwatch-end
+{
+    position:relative;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    font-size: 35px;
+    color:black;
+}
+
+/*CSS OF WINBOX*/
+.win-box
+{
+    visibility: hidden;
+    position: absolute;
+}
+
+.win-box.on{
+    visibility: visible;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    opacity: 1;
+    transition: opacity 2s ease-out;
+}
+.win-content
+{
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 2s ease-out,
+                opacity 1s ease-out;
+}
+
+.win-content.on{
+    text-align: center;
+    color: black;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 5px;
+    z-index:99;
+    display: block;
+    width: 860px;
+    opacity: 1;
+    visibility: visible;
+    transition: transform 1s ease-out,
+                opacity .5s ease-out;
+    transform: translateY(0px);
+}
+
+#username
+{
+    font-size: 50px;
+    margin-top: 25px;
+    border-radius: 5px;
+    padding: 5px;
+    text-shadow: 0px 0px white;
+}
+
+.win-content > h1{
+    text-shadow: 1px 1px white;
+}
+
+/*CSS OF ABOUT BOX IN ABOUT PAGE*/
+.about-box {
+    display: flex;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    justify-content: center;
+    padding: 20px;
+}
+
+#about-header{
+    font-size: 50px;
+    color: black;
+    text-shadow: 1px 1px white;
+    text-align: center;
+    margin: auto;
+}
+
+#about-text{
+    margin-top: 25px;
+    font-size: 25px;
+    color: black;
+    text-shadow: 0.5px 0.5px white;
+}
+
+#example {
+    margin-top: 25px;
+    width: 800px;
+    height: 800px;
+    border-radius: 10px;
+}
+
+/*CSS OF TABLE IN LEADERBOARDS PAGE*/
+table {
+    border-collapse: collapse;
+}
+
+td, th{
+    width: 1000px;
+    font-size: 30px;
+    border: 2px solid white;
+}
+
+th {
+    text-align: center;
+    background-color: black;
+    padding: 5px;
+    color: white;
+}
+
+td {
+    text-align: center;
+    padding: 15px;
+    background-color: gray;
+    color:white;
+}
+
+#choose
+{
+    margin: auto;
+    font-size: 35px;
+    border-radius: 5px;
+    width: 175px;
+    height: 50px;
+}
+
+#difficulty
+{
+    width: 860px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    justify-content: space-between;
+    color: white;
+    text-align: center;
+    margin-bottom: 1%;
+    font-size: 50px;
+}
+
+#submit-button
+{
+    margin: auto;
+    height: 50px;
+    width: 175px;
+    border-radius: 5px;
+    font-size: 35px;
+}
+
+/*CSS OF FOOTER*/
+footer{
+    margin-top: 2.5%;
+    height: 55px;
+    background: rgba(255, 255, 255, 0.5);
+    bottom: 0;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-text {
+    font-size: 20px;
+    color: black;
+    text-decoration: none;
+    text-align: center;
+    padding: 15px;
+}
